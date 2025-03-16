@@ -1,28 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>Primeiro Módulo</title>
-    <script type="module">
-      /*
-       * O pacote por padrão exporta a função "init" que
-       * inicializa o carregamento do WASM.
-       * Também exporta a função que escrevemos em
-       * Rust nomeada "texto"
-       */
-      import init, { texto } from "./pkg/modulo.js";
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-Helper</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="index.js" defer></script>
 
-      // Função assíncrona de execução
-      async function execucao() {
-        // Inicializa o carregamento
-        await init();
-
-        // Coloca o resultado no corpo da página
-        document.body.textContent = texto();
-      }
-
-      execucao();
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a92100a96f.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <h1 id="h1-title"></h1>
+    </header>
+
+    <main>
+      <form>
+        <section class="inputs-containers">
+          <input type="email" placeholder="example@gmail.com" />
+          <div class="password-container">
+            <input
+              type="password"
+              id="field-password"
+              class="field-password"
+              placeholder="*********"
+            />
+            <i class="fas fa-eye" id="eye" onclick="showPassword()"></i>
+            <i
+              class="fas fa-eye-slash"
+              id="eye-slash"
+              onclick="showPassword()"
+            ></i>
+          </div>
+        </section>
+
+        <section class="password-infos">
+          <div>
+            <input type="checkbox" />
+            <span>Lembrar senha?</span>
+          </div>
+          <a href="#">Esqueceu sua senha?</a>
+        </section>
+        <button id="btn-login">Login</button>
+
+        <section class="links-container">
+          <span>Ou entre com:</span>
+          <aside>
+            <a href=""><i class="fab fa-google-plus-square google"></i></a>
+            <a href=""><i class="fab fa-linkedin linkeding"></i></a>
+            <a href=""><i class="fab fa-facebook-square facebook"></i></a>
+          </aside>
+        </section>
+
+        <footer>
+          <hr />
+          <span>Ainda não tem uma conta? <a href="#">Cadastre-se</a></span>
+        </footer>
+      </form>
+    </main>
+  </body>
 </html>

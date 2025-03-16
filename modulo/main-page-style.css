@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #fff;
+}
+
+header {
+  min-height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #383c42;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #ffff;
+}
+
+main {
+  width: 100%;
+  min-height: 100em;
+  background: linear-gradient(#18acfe, #0166e1);
+
+  display: flex;
+  justify-content: center;
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
